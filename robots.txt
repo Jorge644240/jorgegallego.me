@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Allow: /
+Sitemap: https://jorgegallego.me/sitemap.xml

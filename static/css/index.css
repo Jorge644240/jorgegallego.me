@@ -1,0 +1,875 @@
+:root
+{
+    --dark-mode-text: #DDDDDD;
+    --dark-mode-background: #000000;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s linear;
+}
+.color-theme
+{
+    border: none;
+    background: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.1rem;
+    border-radius: 5%;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+    z-index: 100;
+    backdrop-filter: blur(2px);
+}
+body.dark .color-theme
+{
+    color: #FFFFFF;
+}
+.color-theme i
+{
+    cursor: pointer;
+}
+body.dark
+{
+    color: var(--dark-mode-text);
+    background-color: var(--dark-mode-background);
+}
+section:not(#title), footer
+{
+    height: auto;
+    padding: 3% 0;
+}
+#title
+{
+    position: relative;
+    min-height: 100vh;
+}
+nav
+{
+    margin: 0;
+    display: flex;
+    padding: 1.2rem 2%;
+}
+nav .index
+{
+    justify-content: flex-start;
+}
+nav article
+{
+    width: 100%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+nav .expand-menu
+{
+    display: none;
+    font-size: 2.5rem;
+    color: #333333;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+nav .expand-menu:hover
+{
+    color: #000000;
+}
+nav .expand-menu i
+{
+    vertical-align: middle;
+}
+nav .links
+{
+    margin-left: auto;
+    text-align: right;
+    width: 100%;
+}
+nav .links .link
+{
+    margin-right: 2%;
+    color: #333333;
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-size: 1rem;
+    transition: all 0.2s linear;
+}
+body.dark nav .links .link, body.dark nav .expand-menu
+{
+    color: var(--dark-mode-text);
+}
+nav .links .link:hover
+{
+    font-weight: 700;
+    color: #000000;
+}
+body.dark nav .links .link:hover, body.dark nav .expand-menu:hover
+{
+    color: #FFFFFF;
+}
+nav .links .link:last-of-type
+{
+    margin-right: 0;
+}
+#title .center
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 95%;
+}
+#title .center img
+{
+    border-radius: 50%;
+}
+h1, #title p, .bi-arrow-down-short
+{
+    width: 100%;
+}
+h1
+{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 4rem;
+    margin: 0 auto;
+}
+#title p
+{
+    font-family: 'Zilla Slab';
+    font-size: 2rem;
+    top: 50%;
+    margin-top: 0;
+}
+.bi-arrow-down-short
+{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    width: auto;
+    font-size: 3.5rem;
+    color: #212121;
+    animation: down 3s infinite linear;
+    cursor: pointer;
+}
+body.dark .bi-arrow-down-short
+{
+    color: var(--dark-mode-text);
+}
+#about
+{
+    padding-bottom: 3%;
+}
+h2
+{
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 2%;
+    font-weight: 700;
+}
+.row
+{
+    display: flex;
+    align-items: center;
+    padding: 0 2%;
+}
+.col-md-6
+{
+    padding: 0 1%;
+    width: 50%;
+    font-family: 'Questrial';
+    font-size: 1.5rem;
+    word-spacing: 0.1rem;
+    line-height: 1.3;
+    text-align: justify;
+}
+#about .col-md-6:first-of-type span
+{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.col-md-6 .accordion
+{
+    margin: 0 3%;
+    padding: 0 2%;
+    font-family: 'Raleway';
+}
+.col-md-6 .accordion:first-of-type .summary
+{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.col-md-6 .accordion:last-of-type .info ul
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.accordion .summary
+{
+    cursor: pointer;
+    padding: 2% 3%;
+    border-bottom: 1px solid;
+}
+body.dark .accordion
+{
+    color: #FFFFFF;
+}
+body.dark .accordion .summary *
+{
+    color: #FFFFFF;
+}
+.accordion:last-of-type .summary
+{
+    border-bottom: none;
+}
+.accordion .info
+{
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+.accordion .summary.active + .info
+{
+    transform: scaleY(1);
+    opacity: 1;
+}
+.accordion .summary.active, .accordion .info ul
+{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+body.dark .accordion .summary.active, body.dark .accordion .info ul
+{
+    background-color: #CCCCCC;
+    border-color: #000000;
+}
+body.dark .accordion .summary.active *, body.dark .accordion .info ul *
+{
+    color: #000000;
+}
+.col-md-6 .accordion h3
+{
+    display: inline-block;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+}
+.accordion .summary i
+{
+    font-size: 1.2rem;
+    color: #000000;
+}
+.accordion .summary.active *
+{
+    color: inherit;
+}
+.accordion .info ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0 5%;
+    font-size: 1.2rem;
+    display: none;
+}
+.accordion .info ul.show
+{
+    display: block;
+}
+.accordion .info ul li
+{
+    padding: 1% 3%;
+    border-bottom: 1px solid #DDDDDD;
+}
+body.dark .accordion .info ul li
+{
+    border-color: #222222;
+}
+.accordion .info ul li:first-of-type
+{
+    padding-top: 2%;
+}
+.accordion .info ul li:last-of-type
+{
+    border: none;
+    padding-bottom: 3%;
+}
+#about .col-md-6 p
+{
+    margin-bottom: 10%;
+}
+#about .icons br
+{
+    display: none;
+}
+p.icons
+{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.icons i
+{
+    margin-right: 2%;
+    transition: all 0.1s linear;
+}
+.icons i:last-of-type
+{
+    margin-right: 0;
+}
+i.fa-vuejs:hover
+{
+    color: #41B883;
+}
+i.fa-python:hover
+{
+    color: #4B8BBE;
+}
+i.fa-node-js:hover, i.fa-node:hover
+{
+    color: #3C873A;
+}
+i.fa-database:hover
+{
+    color: #888888;
+}
+h3
+{
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+p.job
+{
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+#experience .row
+{
+    border-bottom: 1px solid;
+    border-radius: 10px;
+}
+#experience .row:last-of-type
+{
+    border: none;
+}
+#experience .col-md-6
+{
+    text-align: center;
+}
+#experience .col-md-6:last-of-type
+{
+    font-family: 'Raleway';
+}
+#experience .col-md-6:last-of-type p
+{
+    margin: 0 auto;
+}
+#experience ul
+{
+    font-size: 1rem;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1% 3%;
+}
+#experience ul li
+{
+    padding: 1% 3%;
+    border-bottom: 1px solid #555555;
+}
+#experience ul li:last-of-type
+{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+#experience p.icons
+{
+    margin-top: 2%;
+}
+i.fa-js-square:hover
+{
+    color: #F0DB4F;
+}
+i.fa-ubuntu:hover
+{
+    color: #DD4814;
+}
+.card
+{
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 1% auto;
+}
+body.dark .card, body.dark .card-header, body.dark .card-footer
+{
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.card:last-of-type
+{
+    margin-bottom: 0;
+}
+.card > *
+{
+    padding: 2%;
+    transition: all 0.3s linear;
+}
+.card-header, .card-footer
+{
+    background-color: #EEEEEE;
+    text-align: center;
+    font-family: 'Questrial';
+}
+body.dark .card-header, body.dark .card-footer
+{
+    background-color: #121212;
+    color: #FFFFFF;
+}
+.card-header
+{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-body
+{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Raleway';
+    line-height: 1.5;
+}
+.card-footer
+{
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 1.2rem;
+}
+#portfolio .card
+{
+    width: 70%;
+    margin-bottom: 2%;
+}
+#portfolio .card:last-of-type
+{
+    margin-bottom: 0;
+}
+#portfolio .card .card-header a
+{
+    font-size: 1.2rem;
+    padding: 0 1%;
+}
+#portfolio .card .card-body img
+{
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 3%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+#portfolio .card .card-body p
+{
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+#portfolio > button
+{
+    display: block;
+    margin: 3% auto 0;
+    padding: 0.8rem 2.4rem;
+    background-color: transparent;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Questrial';
+    font-size: 1.3rem;
+    transition: all 0.3s linear;
+}
+#portfolio > button:hover
+{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+body.dark #portfolio > button
+{
+    color: #DDDDDD;
+}
+body.dark #portfolio > button:hover
+{
+    background-color: #DDDDDD;
+    color: #000000;
+}
+#education .card
+{
+    width: 70%;
+}
+.card .card-header h3
+{
+    font-size: 1.8rem;
+    margin: 1% auto;
+    font-weight: 400;
+}
+#education .card .card-body p
+{
+    margin: 0;
+}
+#education .card a
+{
+    transition: all 0.1s linear;
+}
+body.dark a[target="_blank"], body.dark #contact a
+{
+    color: #ADD8E6;
+}
+#education .card a:hover, #education .card a:visited
+{
+    color: #000000;
+}
+body.dark #education .card a:hover, body.dark #education .card a:visited
+{
+    color: #FFFFFF;
+}
+footer h2 + p
+{
+    width: 80%;
+    margin: 0 auto 1%;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'Zilla Slab';
+}
+#contact form
+{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1% 0 0;
+    font-family: 'Poppins';
+    text-align: center;
+}
+#contact form label
+{
+    display: block;
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+}
+#contact form > *:not(label)
+{
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #555555;
+    font-family: 'Poppins';
+    width: 50%;
+    background-color: #EEEEEE;
+    transition: all 0.3s linear;
+    margin-bottom: 2%;
+}
+body.dark #contact form > *:not(label)
+{
+    background-color: #121212;
+    color: #FFFFFF;
+}
+#contact form > *:focus
+{
+    outline: none;
+    background-color: #FFFFFF;
+}
+body.dark #contact form > *:focus
+{
+    background-color: #000000;
+}
+#contact form select
+{
+    appearance: none;
+    background: url('svg/chevron-down.svg') no-repeat right #EEEEEE;
+}
+body.dark #contact form select
+{
+    background: url('svg/chevron-down-dark.svg') no-repeat right #121212;
+}
+#contact form input[type="submit"]
+{
+    display: block;
+    width: 10%;
+    margin: 0 auto 2%;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+body.dark #contact form input[type="submit"]
+{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+#contact form input[type="submit"]:hover, #contact form input[type="submit"]:focus
+{
+    background-color: #000000;
+    color: #FFFFFF;
+}
+body.dark #contact form input[type="submit"]:hover, body.dark #contact form input[type="submit"]:focus
+{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+footer .icons
+{
+    margin-bottom: 0;
+    font-size: 2rem;
+}
+footer .icons a
+{
+    color: #000000;
+    text-decoration: none;
+    margin-right: 2%;
+}
+footer .icons a:last-of-type
+{
+    margin-right: 0;
+}
+i.bi-linkedin:hover
+{
+    color: #2867B2;
+}
+i.bi-twitter:hover
+{
+    color: #1DA1F2;
+}
+body.dark footer p.icons a
+{
+    color: #DDDDDD;
+}
+@keyframes down {
+    from {
+        opacity: 0;
+        bottom: 5%;
+    } to {
+        opacity: 1;
+        bottom: 1%;
+    }
+}
+@media screen and (max-width: 850px)
+{
+    h2
+    {
+        padding: 3% 0 1%;
+    }
+    .row
+    {
+        flex-direction: column;
+    }
+    .col-md-6
+    {
+        width: 100%;
+        text-align: center;
+    }
+    #about .col-md-6 p
+    {
+        margin-bottom: 5%;
+    }
+    .card
+    {
+        margin: 3% auto;
+    }
+    #portfolio .card
+    {
+        width: 80%;
+    }
+    #portfolio .card .card-body img
+    {
+        max-width: 90%;
+    }
+    #contact form > input:not([type="submit"]), #contact form select, #contact form textarea
+    {
+        width: 70%;
+    }
+    #contact form input[type="submit"]
+    {
+        width: 15%;
+    }
+}
+@media screen and (max-width: 700px)
+{
+    nav .expand-menu
+    {
+        display: block;
+        text-align: right;
+        height: 100%;
+    }
+    nav .links
+    {
+        display: none;
+        width: 100%;
+    }
+    nav .links .link
+    {
+        display: block;
+        margin: 1% 0;
+    }
+    #education .card, #portfolio .card
+    {
+        width: 95%;
+    }
+    #portfolio .card .card-body img
+    {
+        max-width: 100%;
+    }
+    #portfolio .card .card-body p
+    {
+        width: 90%;
+    }
+    #contact form input[type="submit"]
+    {
+        width: 20%;
+    }
+    i.fa-vuejs
+    {
+        color: var(--vue-color);
+    }
+    i.fa-python
+    {
+        color: var(--python-color);
+    }
+    i.fa-node-js, i.fa-node
+    {
+        color: var(--node-color);
+    }
+    i.fa-database
+    {
+        color: var(--db-color);
+    }
+    i.fa-js-square
+    {
+        color: var(--js-color);
+    }
+    i.fa-ubuntu
+    {
+        color: var(--ubuntu-color);
+    }
+}
+@media screen and (max-width: 500px)
+{
+    nav .expand-menu
+    {
+        font-size: 2rem;
+    }
+    nav .expand-menu i
+    {
+        vertical-align: middle;
+    }
+    h1
+    {
+        font-size: 3rem;
+    }
+    #title p
+    {
+        font-size: 1.5rem;
+    }
+    h2
+    {
+        font-size: 2.5rem;
+    }
+    #about .col-md-6, .col-md-6 .accordion h3
+    {
+        font-size: 1.2rem;
+    }
+    .col-md-6 .accordion ul, .accordion .summary i
+    {
+        font-size: 1rem;
+    }
+    #about
+    {
+        padding-bottom: 8%;
+    }
+    #about .col-md-6:last-of-type
+    {
+        margin-bottom: 4%;
+    }
+    .card > *
+    {
+        padding: 4% 2%;
+    }
+    .card .card-header h3
+    {
+        font-size: 1.5rem;
+    }
+    #portfolio .card .card-header a
+    {
+        font-size: 1rem;
+    }
+    .card-body, .card-footer
+    {
+        font-size: 1rem;
+    }
+    footer h2 + p
+    {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+    #contact form > input:not([type="submit"]), #contact form select, #contact form textarea
+    {
+        width: 90%;
+    }
+    #contact form input[type="submit"]
+    {
+        width: 25%;
+    }
+}
+@media screen and (max-width: 400px)
+{
+    nav
+    {
+        padding: 2% 3%;
+    }
+    nav .links .link
+    {
+        margin: 3% 0;
+    }
+    h2
+    {
+        font-size: 2rem;
+    }
+    h3
+    {
+        font-size: 1.5rem;
+    }
+    #about .icons br
+    {
+        display: block;
+    }
+    #about .icons::first-line
+    {
+        line-height: 5;
+    }
+    #contact form
+    {
+        width: 100%;
+    }
+    #contact form > input:not([type="submit"]), #contact form textarea
+    {
+        width: 80%;
+    }
+    #contact form input[type="submit"]
+    {
+        width: 30%;
+    }
+}
+@media screen and (max-width: 350px)
+{
+    h1
+    {
+        font-size: 2.5rem;
+    }
+}

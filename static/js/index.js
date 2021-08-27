@@ -23,10 +23,6 @@ window.onresize = () => {
     }
 }
 
-document.querySelector(".bi-arrow-down-short").addEventListener("click", () => {
-    document.querySelector("nav .links .link:first-of-type").click();
-});
-
 for (let summary of document.querySelectorAll(".accordion .summary")) {
     summary.addEventListener("click", () => {
         if (document.querySelector(".summary.active") && document.querySelector(".summary.active") !== summary) document.querySelector(".summary.active").click();

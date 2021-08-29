@@ -62,6 +62,15 @@
                 "alt": "Random Hex Color Generator"
             },
             "description": "This web app generates random hex codes on click that are then applied to the body of the website for the user to identify visually, as well as providing the hex value in case the user wishes to replicate it. A new hex value is generated, applied, and showcased at every button click."
+        },
+        {
+            "name": "Custom JavaScript Carousel",
+            "target": "https://carousel.jorgegallego.me",
+            "img": {
+                "source": "/images/carousel.jpg",
+                "alt": "Custom JavaScript Carousel"
+            },
+            "description": "This is a simple web app that uses Vanilla JavaScript to create a carousel-like component. The left and right arroes allow the user to change the background image at will, with a short animation that plays during the transition. The component also self-actualizes every 10 seconds, showing a new image."
         }
     ]
 }

@@ -64,6 +64,15 @@
             "description": "This web app generates random hex codes on click that are then applied to the body of the website for the user to identify visually, as well as providing the hex value in case the user wishes to replicate it. A new hex value is generated, applied, and showcased at every button click."
         },
         {
+            "name": "Random Quote Generator",
+            "target": "https://quotes.jorgegallego.me",
+            "img": {
+                "source": "/images/quotes.jpg",
+                "alt": "Random Quote Generator"
+            },
+            "description": "This web application uses the 'Quotable' API to obtain a random quote through the use of the Fetch Web API and the JSON data format."
+        },
+        {
             "name": "Digital Clock",
             "target": "https://digitalclock.jorgegallego.me",
             "img": {

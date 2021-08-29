@@ -64,6 +64,15 @@
             "description": "This web app generates random hex codes on click that are then applied to the body of the website for the user to identify visually, as well as providing the hex value in case the user wishes to replicate it. A new hex value is generated, applied, and showcased at every button click."
         },
         {
+            "name": "Digital Clock",
+            "target": "https://digitalclock.jorgegallego.me",
+            "img": {
+                "source": "/images/clock.jpg",
+                "alt": "Digital Clock"
+            },
+            "description": "This is a simple, basic Vanilla JavaScript web application that shows the day of the week and the current time in a 12-hour format."
+        },
+        {
             "name": "Custom JavaScript Carousel",
             "target": "https://carousel.jorgegallego.me",
             "img": {

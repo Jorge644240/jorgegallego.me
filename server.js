@@ -62,44 +62,44 @@ app.post("/", (req, res) => {
                         run();
                     } else {
                         res.redirect("/#contact");
+                        const transporter = nodemailer.createTransport({
+                            service: 'gmail',
+                            auth: {
+                                user: 'jorgegallegoherrera@gmail.com',
+                                pass: 'wlirdcsmlnppjgzy'
+                            }
+                        });
+                        let mailOptions = {
+                            from: "'Jorge Gallego' jorgegallegoherrera@gmail.com",
+                            to: `'${name}' ${email}`,
+                            subject: "Thanks for your interest!",
+                            html: `
+                                    <h1 style="text-align:center;padding-bottom:1%;border-bottom:1px solid;">Thank you for your interest!</h1>
+                                    <p>
+                                        I have received your request.
+                                        I will now review it and get back to you with a response as soon as possible.
+                                    </p>
+                                    <p>
+                                        I look forward to working with you soon.
+                                    </p>
+                                    <div style='padding:1%;border-top:1px solid;'>
+                                            Jorge Gallego
+                                            <br>
+                                            Full Stack Web Developer
+                                            <br>
+                                            Cra 102B # 148 - 31, 3-6-101
+                                            <br>
+                                            Bogotá D.C., Colombia
+                                    </div>
+                                `
+                        };
+                        transporter.sendMail(mailOptions, (error, info) => {
+                            if (error) console.error(error);
+                            else if (info) console.log(info.response);
+                        });
                     }
                 }
             }
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'jorgegallegoherrera@gmail.com',
-                    pass: 'wlirdcsmlnppjgzy'
-                }
-            });
-            let mailOptions = {
-                from: "'Jorge Gallego' jorgegallegoherrera@gmail.com",
-                to: `'${name}' ${email}`,
-                subject: "Thanks for your interest!",
-                html: `
-                        <h1 style="text-align:center;padding-bottom:1%;border-bottom:1px solid;">Thank you for your interest!</h1>
-                        <p>
-                            I have received your request.
-                            I will now review it and get back to you with a response as soon as possible.
-                        </p>
-                        <p>
-                            I look forward to working with you soon.
-                        </p>
-                        <div style='padding:1%;border-top:1px solid;'>
-                                Jorge Gallego
-                                <br>
-                                Full Stack Web Developer
-                                <br>
-                                Cra 102B # 148 - 31, 3-6-101
-                                <br>
-                                Bogotá D.C., Colombia
-                        </div>
-                    `
-            };
-            transporter.sendMail(mailOptions, (error, info) => {
-                if (error) console.error(error);
-                else if (info) console.log(info.response);
-            });
             run();
         }
     });

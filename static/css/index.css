@@ -528,6 +528,10 @@ body.dark #portfolio > button:hover
 {
     transition: all 0.1s linear;
 }
+body.dark a[target="_blank"], body.dark #contact p:not(.icons) a
+{
+    color: #ADD8E6;
+}
 #education .card a:hover, #education .card a:visited
 {
     color: #000000;

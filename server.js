@@ -5,8 +5,8 @@ const nodemailer = require("nodemailer"); // import nodemailer from 'nodemailer'
 const favicon = require("serve-favicon"); // import favicon from 'serve-favicon'
 const existence = require("email-existence"); // import existence from 'email-existence'
 const client = require("@mailchimp/mailchimp_marketing"); // import client from '@mailchimp/mailchimp_marketing'
-const cors = require("cors");
-const projects = require("./projects.json").projects;
+const cors = require("cors"); // import cors from cors
+const projects = require("./projects.json").projects; // import { projects } from './projects.json'
 const app = express();
 const port = 3001;
 

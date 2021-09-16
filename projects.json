@@ -100,6 +100,15 @@
             "description": "This is a simple, basic Vanilla JavaScript web application that shows the day of the week and the current time in a 12-hour format."
         },
         {
+            "name": "URL Encoder/Decoder",
+            "target": "https://encoder.jorgegallego.me",
+            "img": {
+                "source": "/images/encoder.jpg",
+                "alt": "URL Encoder/Decoder"
+            },
+            "description": "This web application allows the users to enter any URL in the textarea element and encode/decode such URL through Vanilla JavaScript. The resultant URL (after encoding/decoding) is displayed as a link to let the user to visit the website."
+        },
+        {
             "name": "Character Counter",
             "target": "https://characters.jorgegallego.me",
             "img": {

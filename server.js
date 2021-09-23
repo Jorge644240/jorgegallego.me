@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     const email = req.body.email, name = req.body.name, service = req.body.service, message = req.body.message;
     existence.check(email, (error, response) => {
-        if (error) {
+        if (error || !response) {
             res.redirect("/#contact");
         } else if (response) {
             let new_client = {

@@ -19,15 +19,6 @@
             "description": "This application allows the users to search the Spotify music database for artists and songs through the web. Users can choose to use either or both search criteria. An artist or artist/song search will return only one result. A song search will return the top five results. If the intended result doesn't appear, the user can be redirected to Google Search."
         },
         {
-            "name": "Weather App",
-            "target": "https://weather.jorgegallego.me",
-            "img": {
-                "source": "/images/weather.jpg",
-                "alt": "Weather App"
-            },
-            "description": "This application allows users to search for real-time weather data of any city or town in the world. The search results include the real-time temperature, the expected temperature range for the day, and the relative air humidity (as a percentage), as well as a small icon to represent the overall current weather data. After every search, the user is allowed to search a different city and get a completely different result."
-        },
-        {
             "name": "Tasks",
             "target": "https://tasks.jorgegallego.me",
             "img": {
@@ -35,6 +26,15 @@
                 "alt": "Tasks"
             },
             "description": "This is a NodeJS-MongoDB web application created with Express and Mongoose that stores a list of tasks respective to the person who creates them, and renders them for the user to see. New tasks can be added through a form above the list and each time it is saved to the database and re-rendered. The application also allows users to delete tasks by clicking on them and confirming the action, after which the task is deleted from the database and the new task list is rendered to the user."
+        },
+        {
+            "name": "Weather App",
+            "target": "https://weather.jorgegallego.me",
+            "img": {
+                "source": "/images/weather.jpg",
+                "alt": "Weather App"
+            },
+            "description": "This application allows users to search for real-time weather data of any city or town in the world. The search results include the real-time temperature, the expected temperature range for the day, and the relative air humidity (as a percentage), as well as a small icon to represent the overall current weather data. After every search, the user is allowed to search a different city and get a completely different result."
         },
         {
             "name": "URL Shortener",

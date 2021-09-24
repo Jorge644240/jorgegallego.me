@@ -34,7 +34,7 @@
                 "source": "/images/tasks.jpg",
                 "alt": "Tasks"
             },
-            "description": "This is a NodeJS-MongoDB web application created with Express and Mongoose that stores a list of tasks respective to the person who creates them, and renders them for the user to see. New tasks can be added through a form above the list and each time it is saved to the database and re-rendered. THIS PROJECT IS STILL BEING WORKED ON. THIS IS ONLY A FIRST VERSION (MVP)."
+            "description": "This is a NodeJS-MongoDB web application created with Express and Mongoose that stores a list of tasks respective to the person who creates them, and renders them for the user to see. New tasks can be added through a form above the list and each time it is saved to the database and re-rendered. The application also allows users to delete tasks by clicking on them and confirming the action, after which the task is deleted from the database and the new task list is rendered to the user."
         },
         {
             "name": "URL Shortener",

@@ -24,7 +24,7 @@ client.setConfig({
 });
 
 app.get("/", (req, res) => {
-    Experience.find({sort: {startYear: -1}}, 'company title responsibilities', {limit: 3}, (err1, experiences) => {
+    Experience.find({}, 'company title responsibilities', {sort: {startYear: -1}, limit: 3}, (err1, experiences) => {
         if (err1) throw err1;
         Project.find({}, 'name target img description', {limit: 3}, (err2, projects) => {
             if (err2) throw err2;

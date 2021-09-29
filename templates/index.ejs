@@ -106,21 +106,22 @@
         </section>
         <section id="experience">
             <h2>Experience</h2>
-            <article class="row">
-                <aside class="col-md-6">
-                    <h3>MP Consultores SAS</h3>
-                    <p class="job">Full Stack Web Developer</p>
-                </aside>
-                <aside class="col-md-6">
-                    <p>Responsibilities:</p>
-                    <ul>
-                        <li>Design the Front End of the website on Canva.</li>
-                        <li>Create the Back End logic of the web app with JavaScript (NodeJS/ExpressJS).</li>
-                        <li>Write the HTML5, CSS3, and JavaScript code to implement the agreed upon design.</li>
-                        <li>Deploy the company's app using NGINX and PM2 on Ubuntu 20.04.</li>
-                    </ul>
-                </aside>
-            </article>
+            <% for (let experience of experiences) { %>
+                <article class="row">
+                    <aside class="col-md-6">
+                        <h3><%= experience.company %></h3>
+                        <p class="job"><%= experience.title %></p>
+                    </aside>
+                    <aside class="col-md-6">
+                        <p>Responsibilities:</p>
+                        <ul>
+                            <% for (let responsibility of experience.responsibilities) { %>
+                                <li><%= responsibility %></li>
+                            <% } %>  
+                        </ul>
+                    </aside>
+                </article>
+            <% } %>
             <p class="icons">
                 <i class="fab fa-node fa-5x"></i>
                 <i class="fab fa-js-square fa-5x"></i>
@@ -177,47 +178,12 @@
                 </aside>
                 <aside class="card-body">
                     <p>
-                        <a href="https://cs50.harvard.edu/x/2021/" target="_blank" rel="noreferrer">
-                            CS50's Introduction to Computer Science
-                        </a>
-                        <br>
-                        (2020)
-                        <br>
-                        <a href="https://www.online.umich.edu/courses/introduction-to-html5/" target="_blank" rel="noreferrer">
-                            Introduction to HTML5
-                        </a>
-                        <br>
-                        (2020)
-                        <br>
-                        <a href="https://www.online.umich.edu/courses/introduction-to-css3/" target="_blank" rel="noreferrer">
-                            Introduction to CSS3
-                        </a>
-                        <br>
-                        (2020)
-                        <br>
-                        <a href="https://www.online.umich.edu/courses/interactivity-with-javascript/" target="_blank" rel="noreferrer">
-                            Interactivity with JavaScript
-                        </a>
-                        <br>
-                        (2020)
-                        <br>
-                        <a href="https://www.online.umich.edu/courses/advanced-styling-with-responsive-design/" target="_blank" rel="noreferrer">
-                            Advanced Styling with Responsive Design
-                        </a>
-                        <br>
-                        (2020)
-                        <br>
-                        <a href="https://cs50.harvard.edu/web/2020/" target="_blank" rel="noreferrer">
-                            CS50's Web programming with Python and JavaScript
-                        </a>
-                        <br>
-                        (2020-2021)
-                        <br>
-                        <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/" target="_blank" rel="noreferrer">
-                            The Complete 2021 Web Development Bootcamp
-                        </a>
-                        <br>
-                        (Current)
+                        <% for (let course of courses) { %>
+                            <a href="<%= course.link %>" target="_blank" rel="noopener noreferrer"><%= course.name %></a>
+                            <br>
+                            (<%= course.year %>)
+                            <br>
+                        <% } %>
                     </p>
                 </aside>
             </article>

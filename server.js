@@ -6,7 +6,7 @@ const favicon = require("serve-favicon"); // import favicon from 'serve-favicon'
 const existence = require("email-existence"); // import existence from 'email-existence'
 const client = require("@mailchimp/mailchimp_marketing"); // import client from '@mailchimp/mailchimp_marketing'
 const cors = require("cors"); // import cors from cors
-const projects = require("./projects.json").projects; // import { projects } from './projects.json'
+const { Experience, Project, Course } = require("./mongodb");
 const app = express();
 const port = 3001;
 
@@ -24,8 +24,19 @@ client.setConfig({
 });
 
 app.get("/", (req, res) => {
-    res.render("index", {
-        projects: projects.slice(0, 3)
+    Experience.find({sort: {startYear: -1}}, 'company title responsibilities', {limit: 3}, (err1, experiences) => {
+        if (err1) throw err1;
+        Project.find({}, 'name target img description', {limit: 3}, (err2, projects) => {
+            if (err2) throw err2;
+            Course.find({}, 'name link year', {sort: {year: -1}, limit: 7}, (err3, courses) => {
+                if (err3) throw err3;
+                res.render("index", {
+                    experiences,
+                    projects,
+                    courses
+                });
+            })
+        })
     });
 });
 
@@ -106,8 +117,10 @@ app.post("/", (req, res) => {
 });
 
 app.get("/portfolio", (req, res) => {
-    res.render("portfolio", {
-        projects
+    Project.find({}, (err, projects) => {
+        res.render("portfolio", {
+            projects
+        });
     });
 });
 

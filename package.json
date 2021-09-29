@@ -24,6 +24,7 @@
     "ejs": "^3.1.6",
     "email-existence": "^0.1.6",
     "express": "^4.17.1",
+    "mongoose": "^6.0.8",
     "nodemailer": "^6.6.2",
     "serve-favicon": "^2.5.0"
   }

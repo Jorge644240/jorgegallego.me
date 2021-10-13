@@ -6,17 +6,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Jorge Gallego">
-        <meta name="title" content="Jorge Gallego - Full Stack Web Developer">
+        <meta name="title" content="<%= title %>">
         <meta name="keywords" content="Jorge, Gallego, Jorge Gallego, Full Stack developer, Full Stack Web Developer, Web Developer, Front End developer, Front End Web Developer, Back End developer, Back End Web developer, Vue developer, Node developer, Node.js, Vue.js, VueJS, Flask developer, Django developer, MySQL, PostgreSQL, MongoDB, jQuery, MP Consultores SAS, NGINX, Ubuntu, VPS, Virtual Private Server, Databse Design, Database Administration, DBD, DBA, DBD/DBA, Web Designer, Universidad del Rosario, Web developer near me, Web developer in Bogota, Web developer in Colombia">
         <meta name="description" content="My name is Jorge Gallego, and I'm a Full Stack Web developer. I am skilled and experienced in using nothing but the best tools in the market for web development, which allows me to help businesses establish and grow a virtual presence while also driving in new visitors to their website and new clients to the company.">
-        <title>Jorge Gallego - Full Stack Web Developer</title>
-        <link rel="canonical" href="https://jorgegallego.me">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Zilla+Slab&family=Poppins&family=Questrial&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="/css/index.css">
-        <script src="https://kit.fontawesome.com/313f6b6c56.js" crossorigin="anonymous"></script>
+        <title><%= title %></title>
+        <%- include('partials/links') %> 
         <%- include('partials/google') %> 
     </head>
     <body>
@@ -207,18 +201,7 @@
                 </label>
                 <input type="submit" value="Send">
             </form>
-            <h2>Follow Me</h2>
-            <p class="icons">
-                <a href="https://www.linkedin.com/in/jorge-gallego-6b641b1b1/" target="_blank" title="LinkedIn" rel="noreferrer">
-                    <i class="bi-linkedin"></i>
-                </a>
-                <a href="http://twitter.com/jorge__gallego" target="_blank" title="Twitter" rel="noreferrer">
-                    <i class="bi-twitter"></i>
-                </a>
-                <a href="https://github.com/Jorge644240" target="_blank" title="GitHub" rel="noreferrer">
-                    <i class="bi-github"></i>
-                </a>
-            </p>
+            <%- include('partials/footer') %> 
         </footer>
         <script src="/js/colorTheme.js"></script>
         <script src="/js/index.js"></script>

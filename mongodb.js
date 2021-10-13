@@ -1,6 +1,4 @@
-const { connect, Schema, model } = require("mongoose");
-
-connect('mongodb://localhost:27017/jdgh');
+const { Schema, model } = require("mongoose");
 
 const experienceSchema = new Schema({
     company: {

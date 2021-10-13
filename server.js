@@ -6,6 +6,7 @@ const favicon = require("serve-favicon"); // import favicon from 'serve-favicon'
 const existence = require("email-existence"); // import existence from 'email-existence'
 const client = require("@mailchimp/mailchimp_marketing"); // import client from '@mailchimp/mailchimp_marketing'
 const cors = require("cors"); // import cors from cors
+const { connect } = require("mongoose");
 const { Experience, Project, Course } = require("./mongodb");
 const app = express();
 const port = 3001;
@@ -14,9 +15,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "static")));
 app.use(favicon(path.join(__dirname, "favicon.ico")));
 app.use(cors());
-
 app.set("view engine", "ejs");
 app.set("views", "templates");
+
+connect('mongodb://localhost:27017/jdgh');
 
 client.setConfig({
     apiKey: '09ba4af739c3234e2eb78b9aed0a9301-us5',

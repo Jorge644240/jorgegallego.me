@@ -33,6 +33,8 @@ app.get("/", (req, res) => {
             Course.find({}, 'name link year', {sort: {year: -1}, limit: 7}, (err3, courses) => {
                 if (err3) throw err3;
                 res.render("index", {
+                    title: "Jorge Gallego - Full Stack Web Developer",
+                    path: req.path,
                     experiences,
                     projects,
                     courses
@@ -121,6 +123,8 @@ app.post("/", (req, res) => {
 app.get("/portfolio", (req, res) => {
     Project.find({}, (err, projects) => {
         res.render("portfolio", {
+            title: "My Portfolio - Jorge Gallego",
+            path: req.path,
             projects
         });
     });

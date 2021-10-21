@@ -9,11 +9,12 @@ const cors = require("cors"); // import cors from cors
 const { connect } = require("mongoose");
 const { Experience, Project, Course } = require("./mongodb");
 const app = express();
+require("dotenv").config();
 const port = 3001;
 
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "static")));
 app.use(favicon(path.join(__dirname, "favicon.ico")));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.set("view engine", "ejs");
 app.set("views", "templates");
@@ -21,7 +22,7 @@ app.set("views", "templates");
 connect('mongodb://localhost:27017/jdgh');
 
 client.setConfig({
-    apiKey: '09ba4af739c3234e2eb78b9aed0a9301-us5',
+    apiKey: process.env.API_KEY,
     server: 'us5'
 });
 
@@ -125,7 +126,7 @@ app.get("/portfolio", (req, res) => {
         res.render("portfolio", {
             title: "My Portfolio - Jorge Gallego",
             path: req.path,
-            projects
+            projects: projects.reverse()
         });
     });
 });

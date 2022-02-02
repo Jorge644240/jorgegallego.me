@@ -31,14 +31,14 @@ app.get("/", (req, res) => {
         if (err1) throw err1;
         Project.find({}, 'name target img description', {limit: 3}, (err2, projects) => {
             if (err2) throw err2;
-            Course.find({}, 'name link year', {sort: {year: -1}, limit: 7}, (err3, courses) => {
+            Course.find({}, 'name link year', {limit: 7}, (err3, courses) => {
                 if (err3) throw err3;
                 res.render("index", {
                     title: "Jorge Gallego - Full Stack Web Developer",
                     path: req.path,
                     experiences,
                     projects,
-                    courses
+                    courses: courses.reverse()
                 });
             })
         })

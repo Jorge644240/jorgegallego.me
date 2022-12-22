@@ -7,6 +7,7 @@ test("Passing no options to Project constructor return empty instance", () => {
 	expect(project).toHaveProperty("description", undefined);
 	expect(project).toHaveProperty("url", undefined);
 	expect(project).toHaveProperty("image", undefined);
+	expect(project).toHaveProperty("featured", false);
 });
 
 test("Project name cannot be shorter than 5 characters", () => {
@@ -75,4 +76,9 @@ test("Project image URL must be an AWS S3 object in 'jorgegallego.me' bucket", (
 	} catch (err) {
 		expect(err).toHaveProperty("message", "Project Image URL must be of AWS S3 bucket 'jorgegallego.me'");
 	}
+});
+
+test("Project Featured Status is set to FALSE by default", () => {
+	const project = new Project();
+	expect(project).toHaveProperty("featured", false);
 });

@@ -40,7 +40,8 @@ Project.init({
 			len: [50, 500]
 		},
 		get() {
-			return marked(this.getDataValue("description"));
+			if (this.getDataValue("description")) return marked(this.getDataValue("description"));
+			else return undefined;
 		},
 		set(newProjectDescription) {
 			this.setDataValue("description", newProjectDescription);

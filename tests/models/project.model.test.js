@@ -1,5 +1,5 @@
-const Project = require("./../../models/project.model");
 require("dotenv").config();
+const Project = require("./../../models/project.model");
 
 test("Passing no options to Project constructor return empty instance", () => {
 	const project = new Project();

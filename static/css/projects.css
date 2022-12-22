@@ -1,0 +1,130 @@
+header
+{
+	min-height: auto;
+	padding: 0;
+}
+h1
+{
+	text-align: center;
+	margin: 1rem auto;
+}
+header p
+{
+	text-align: center;
+	width: 50%;
+	margin: 0 auto 1rem;
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+#projects
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+#projects h2
+{
+	width: 100%;
+	text-align: left;
+	padding: 0 1rem;
+}
+#projects > p
+{
+	font-size: 1.2rem;
+	width: 70%;
+	margin: 1rem;
+	padding: 0 1.5rem;
+	text-align: center;
+	font-weight: 500;
+}
+.project
+{
+	width: 30%;
+	margin: 1rem auto;
+}
+.project > p
+{
+	margin: 0;
+	text-align: center;
+}
+.project .name
+{
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+.project img
+{
+	margin: 1rem auto;
+	border: 1px solid;
+}
+.project .description p
+{
+	margin: 0 0 1rem;
+}
+@media screen and (max-width: 991px)
+{
+	.project
+	{
+		width: 40%;
+	}
+}
+@media screen and (max-width: 767px)
+{
+	header p
+	{
+		width: 80%;
+	}
+}
+@media screen and (max-width: 600px)
+{
+	header p
+	{
+		width: 90%;
+	}
+	#projects h2
+	{
+		text-align: center;
+		padding: 0;
+	}
+	.project
+	{
+		width: 70%;
+	}
+	.project .description
+	{
+		text-align: justify;
+	}
+}
+@media screen and (max-width: 500px)
+{
+	.project
+	{
+		width: 90%;
+		margin: 0.5rem auto;
+	}
+}
+@media screen and (max-width: 450px)
+{
+	#projects h2
+	{
+		font-size: 2rem;
+	}
+	header p
+	{
+		padding: 0 1rem;
+		width: 100%;
+		font-size: 1.1rem;
+		font-weight: 400;
+		text-align: justify;
+		margin-bottom: 0;
+	}
+}
+@media screen and (max-width: 400px)
+{
+	.project
+	{
+		width: 100%;
+	}
+}

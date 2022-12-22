@@ -1,0 +1,9 @@
+body.dark
+{
+	background-color: #1F1F1F;
+	color: #EEEEEE;
+}
+body.dark nav a::after
+{
+	background-color: #EEEEEE;
+}

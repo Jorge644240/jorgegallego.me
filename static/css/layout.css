@@ -1,0 +1,213 @@
+html
+{
+	scroll-behavior: smooth;
+}
+*, ::before, ::after
+{
+	box-sizing: border-box;
+}
+*:focus
+{
+	outline: none;
+}
+body
+{
+	margin: 0;
+	font-family: 'Lexend';
+	transition: all 0.1s linear;
+	font-weight: 400;
+}
+nav
+{
+	padding: 0.5rem 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+a
+{
+	color: inherit;
+}
+nav a
+{
+	text-decoration: none;
+	transition: all 0.1s linear;
+	position: relative;
+	padding: 0.2rem 0;
+}
+nav a.brand
+{
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+nav a::after 
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #000000;
+	transform-origin: bottom right;
+	transition: transform 0.15s ease-in-out;
+}  
+nav a:hover::after 
+{
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+nav button
+{
+	display: none;
+	border: none;
+	background-color: transparent;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+nav a:not(.brand)
+{
+	margin: 0 0.5rem;
+}
+nav a:not(.brand):focus
+{
+	font-weight: 500;
+}
+header
+{
+	min-height: 75vh;
+	height: auto;
+	position: relative;
+	padding: 1rem;
+}
+img
+{
+	max-width: 100%;
+}
+header > a
+{
+	position: absolute;
+	left: 50%;
+	bottom: 1%;
+	transform: translateX(-50%);
+	font-size: 1.5rem;
+	animation: down 1.5s ease-in-out infinite alternate-reverse;
+}
+h1, h2, h3, h4
+{
+	font-family: 'Poppins';
+}
+h1
+{
+	font-size: 3rem;
+	font-weight: 700;
+}
+h2
+{
+	font-size: 2.5rem;
+	font-weight: 600;
+	margin: 0 auto 1rem;
+}
+h3
+{
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+h4
+{
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+main section
+{
+	padding: 1rem;
+}
+footer
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+footer aside
+{
+	width: 50%;
+	padding: 0.5rem 1rem;
+}
+footer h3
+{
+	margin: 0 0 0.5rem;
+}
+footer a.link
+{
+	display: block;
+	padding: 0.2rem 0;
+	text-decoration: none;
+	font-size: 1.1rem;
+	transition: all 0.1s linear;
+}
+footer a.link:hover, footer a.link:focus
+{
+	border-left: 5px solid;
+	padding-left: 0.5rem;
+}
+footer h4
+{
+	margin: 0.5rem 0;
+}
+footer i
+{
+	font-size: 1.5rem;
+}
+footer p
+{
+	text-align: center;
+}
+@keyframes down
+{
+	from {
+		opacity: 1;
+		bottom: 1%;
+	} to {
+		opacity: 0;
+		bottom: 5%;
+	}
+}
+@media screen and (max-width: 600px)
+{
+	nav button
+	{
+		display: block;
+		color: inherit;
+	}
+	.nav-wrapper
+	{
+		display: none;
+		text-align: right;
+		width: 100%;
+		padding: 0.5rem 0;
+	}
+	.nav-wrapper.active
+	{
+		display: block;
+	}
+	.nav-wrapper a
+	{
+		display: block;
+	}
+	nav a:hover::after 
+	{
+		transform: scaleX(0);
+	}
+}
+@media screen and (max-width: 500px)
+{
+	footer aside
+	{
+		width: 100%;
+	}
+}

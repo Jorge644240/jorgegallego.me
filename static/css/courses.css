@@ -1,0 +1,118 @@
+header
+{
+	min-height: auto;
+	padding: 0;
+}
+h1
+{
+	text-align: center;
+	margin: 1rem auto;
+}
+header p, main > p
+{
+	margin: 0 auto 1rem;
+	width: 60%;
+	text-align: center;
+}
+header p
+{
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+#courses
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+#courses h2
+{
+	text-align: left;
+	width: 100%;
+	font-size: 2rem;
+	margin: 0.5rem 1rem;
+}
+#courses h2:not(:first-of-type)
+{
+	margin-top: 2rem;
+}
+.course
+{
+	width: 30%;
+	text-align: center;
+	margin: 1rem;
+	box-shadow: 0 0 5px 3px;
+	padding: 0 0.5rem;
+}
+.course .name
+{
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-bottom: 0;
+}
+.course .school
+{
+	margin-top: 0.5rem;
+}
+.course .url
+{
+	margin: 2rem 0 1.5rem;
+}
+.course a
+{
+	border-radius: 5px;
+	border: 1px solid;
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+}
+@media screen and (max-width: 991px)
+{
+	#courses
+	{
+		justify-content: space-around;
+	}
+	#courses h2
+	{
+		text-align: center;
+	}
+	.course
+	{
+		width: 40%;
+	}
+}
+@media screen and (max-width: 767px)
+{
+	header p
+	{
+		width: 80%;
+	}
+}
+@media screen and (max-width: 600px)
+{
+	header p
+	{
+		width: 90%;
+	}
+	.course
+	{
+		width: 65%;
+	}
+}
+@media screen and (max-width: 450px)
+{
+	header p
+	{
+		padding: 0 1rem;
+		font-size: 1.1rem;
+		width: 100%;
+		font-weight: 400;
+		text-align: justify;
+		margin-bottom: 0;
+	}
+	.course
+	{
+		width: 90%;
+	}
+}

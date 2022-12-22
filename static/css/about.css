@@ -1,0 +1,82 @@
+header
+{
+	min-height: auto;
+	padding: 0;
+}
+h1
+{
+	text-align: center;
+	margin: 1rem auto;
+}
+header p
+{
+	margin: 0 auto 1rem;
+	width: 60%;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+section
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+section aside
+{
+	padding: 1rem;
+	width: 50%;
+	font-size: 1.1rem;
+}
+section img
+{
+	max-width: 50%;
+	max-height: 30vh;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 5px #999999;
+	transition: all 0.1s linear;
+	cursor: pointer;
+}
+section img:hover
+{
+	box-shadow: 0 0 10px 5px #222222;
+}
+body.dark section img:hover
+{
+	box-shadow: 0 0 10px 5px #FFFFFF;
+}
+section:nth-of-type(2n)
+{
+	text-align: right;
+}
+@media screen and (max-width: 767px)
+{
+	header p
+	{
+		width: 80%;
+	}
+}
+@media screen and (max-width: 600px)
+{
+	header p
+	{
+		width: 90%;
+	}
+}
+@media screen and (max-width: 450px)
+{
+	header p
+	{
+		padding: 0 1rem;
+		font-size: 1.1rem;
+		width: 100%;
+		font-weight: 400;
+		text-align: justify;
+		margin-bottom: 0;
+	}
+}

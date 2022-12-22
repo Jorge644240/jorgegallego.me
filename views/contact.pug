@@ -1,0 +1,23 @@
+extends layout.pug
+
+block styles 
+	link(rel="stylesheet", href="/css/contact.css")
+
+block main 
+	section#contact 
+		h1 Contact Me
+		p Already know what you're looking for? Need some extra help to make your vision a reality? Fill out the form below and I will get back to you as soon as possible to get started.
+		form(method="POST")
+			p(class=message ? "message" : error ? "error" : null) #{message || error}
+			input#name(type="text", name="name", placeholder="John Doe *", required, maxlength="150")
+			input#email(type="email", name="email", placeholder="johndoe@example.com *", required, maxlength="300")
+			select#service(name="service", required)
+				option(value="Front End") Front End Development 
+				option(value="Back End") Back End Development 
+				option(value="Full Stack") Full Stack Development 
+				option(value="Consultancy") Consultancy
+			textarea#message(name="message", cols="30", rows="8", placeholder="What are your requirements? Needs? Are there any pre-requisites for development, or are you open to suggestions? What do you envision when you think of your website?", required, maxlength="1000")
+			input(type="submit", value="Submit")
+
+block scripts 
+	script(src="/js/contact.js") 

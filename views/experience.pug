@@ -1,0 +1,30 @@
+extends layout.pug
+
+block styles 
+	link(rel="stylesheet", href="/css/experience.css")
+
+block header
+	h1 Experience
+	p I have 3 years of experience as a Web Engineer, building all sorts of websites with various levels of complexity, and different needs and visions for the final product. Here's an overview of all my previous professional experience as a Full Stack Web Engineer.
+
+block main 
+	section#experience 
+		each job in jobs
+			aside.experience(id=job.id)
+				div
+					p.title #{job.title}
+					p.company 
+						a(href=job.website, target="_blank", rel="noopener noreferrer nofollow") #{job.company} 
+							sup.bi-box-arrow-up-right
+					p.type #{job.type}
+					p.date #{job.startDate.toLocaleDateString()} - #{job.endDate ? job.endDate.toLocaleDateString() : "Present"}
+					p.summary #{job.summary} 
+				div.description #{job.description}
+	p To see my projects, go to my 
+		a(href="/projects") Projects
+		|  page. To check out my skills, visit my 
+		a(href="/about#skills") skills section
+		|  in the About Me page.
+
+block scripts 
+	script(src="/js/experience.js") 

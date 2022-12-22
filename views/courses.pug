@@ -1,0 +1,20 @@
+extends layout.pug 
+
+block styles 
+	link(rel="stylesheet", href="/css/courses.css")
+
+block header
+	h1 Courses
+	p The tech industry is one of those where you keep up or get left behind. Following along, here's a complete list of all the courses I've completed to date, filtered by topic and organized by date.
+
+block main 
+	section#courses
+		- const coursesTopics = [ ...new Set(courses.map(course => course.topic)) ];
+		each topic in coursesTopics 
+			h2 #{topic}
+			each course in courses.filter(course => course.topic===topic)
+				aside.course 
+					p.name #{course.name} (#{course.year})
+					p.school #{course.school}
+					p.url
+						a(href=course.url, target="_blank", rel="noopener noreferrer nofollow") View Course

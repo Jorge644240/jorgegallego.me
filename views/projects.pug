@@ -1,0 +1,30 @@
+extends layout.pug
+
+block styles 
+	link(rel="stylesheet", href="/css/projects.css")
+
+block header 
+	h1 Projects
+	p Either for learning new skills or deepening knowledge of previous ones, projects are a great way to prove skills and knowledge in the industry. Hence, here's a compilation of all the projects I've built in over 3 years of learning and experience as a Web Developer.
+
+block main 
+	section#projects
+		h2 Featured Projects
+		each project in projects.filter(project => project.featured)
+			aside.project
+				p.name #{project.name}
+				p.url 
+					a(href=project.url, target="_blank", rel="noopener noreferrer nofollow") View Project 
+				img(src=project.image, alt=project.name, title=project.name)
+				div.description #{project.description}
+		h2 Other Projects
+		each project in projects.filter(project => !project.featured)
+			aside.project
+				p.name #{project.name}
+				p.url 
+					a(href=project.url, target="_blank", rel="noopener noreferrer nofollow") View Project 
+				img(src=project.image, alt=project.name, title=project.name)
+				div.description #{project.description}
+
+block scripts 
+	script(src="/js/projects.js") 

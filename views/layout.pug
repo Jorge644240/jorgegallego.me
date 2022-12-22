@@ -1,0 +1,72 @@
+doctype html
+
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(name="author", content="Jorge Gallego")
+		meta(name="title", content=title)
+		meta(name="keywords", content="")
+		meta(name="description", content="I'm a Full Stack Engineer. I build digital bridges to help you and your business connect with potential customers throughout the Internet by creating memorable online experiences that keep them coming back for more.")
+		title #{title}
+		link(rel="preconnect", href="https://fonts.googleapis.com")
+		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap", rel="preload", as="style")
+		noscript 
+			link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap")
+		link(rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css" as="style")
+		noscript
+			link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@latest/font/bootstrap-icons.css")
+		link(rel="stylesheet", href="/css/layout.css")
+		block styles
+		link(rel="stylesheet", href="/css/darkMode.css")
+		link(rel="canonical", href=`https://jorgegallego.me${path}`)
+		link(rel="icon", type="image/x-icon", href="/favicon.ico")
+		script(src="https://www.googletagmanager.com/gtag/js?id=G-DZ5JVF6G4Z", async)
+		script(src="/js/analytics/ga4.js") 
+	body 
+		nav 
+			a.brand(href=path==="/"?"#":"/", class=path==="/"?"active":null) Jorge Gallego 
+			button(title="Menu")
+				i.bi-list
+			.nav-wrapper 
+				a(href=path==="/about"?"#":"/about", class=path==="/about"?"active":null) About
+				a(href=path==="/experience"?"#":"/experience", class=path==="/experience"?"active":null) Experience
+				a(href=path==="/projects"?"#":"/projects", class=path==="/projects"?"active":null) Projects
+				a(href=path==="/courses"?"#":"/courses", class=path==="/courses"?"active":null) Courses
+				a(href=path==="/contact"?"#":"/contact", class=path==="/contact"?"active":null) Contact
+		header
+			block header 
+		main
+			block main
+		footer 
+			aside
+				h3 Quick Links
+				a.link(href="/about") About Me
+				a.link(href="/experience") Experience
+				a.link(href="/projects") Projects
+				a.link(href="/courses") Courses
+				a.link(href="/contact") Contact
+			aside 
+				h3 Let's Connect
+				a.link(href="https://linkedin.com/in/jorge-gallego", target="_blank", rel="noopener noreferrer nofollow") 
+					i.bi-linkedin
+					|  LinkedIn
+				a.link(href="https://twitter.com/jorge__gallego", target="_blank", rel="noopener noreferrer nofollow")
+					i.bi-twitter 
+					|  Twitter 
+				a.link(href="https://github.com/Jorge644240", target="_blank", rel="noopener noreferrer nofollow")
+					i.bi-github
+					|  GitHub
+				a.link(href="https://medium.com/@jorgegallegoherrera", target="_blank", rel="noopener noreferrer nofollow")
+					i.bi-medium
+					|  Medium  
+			p.copyright 
+				| &copy; All Rights Reserved
+				br
+				| Jorge Gallego
+				br
+				| 2020 - #{new Date().getFullYear()}
+		script(src="/js/layout.js") 
+		block scripts 

@@ -11,7 +11,7 @@ const connection = new Sequelize({
 });
 
 (async () => {
-	await connection.authenticate();
+	if (process.env.ENV !== "actions") await connection.authenticate();
 })();
 
 module.exports = connection;

@@ -30,7 +30,7 @@ jobs:
                   RDS_DB_USERNAME: ${{ secrets.RDS_DB_USERNAME }}
                   RDS_DB_PASSWORD: ${{ secrets.RDS_DB_PASSWORD }}
                   RDS_DB_NAME: ${{ secrets.RDS_DB_NAME }}
-            - run: echo $env
+            - run: echo "$env"
             - run: npm ci
             - run: npm run build --if-present
             - run: npm test

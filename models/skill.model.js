@@ -43,6 +43,7 @@ Skill.init({
 			return ["Currently Learning", "Novice", "Experienced", "Advanced", "Expert"][this.getDataValue("level")];
 		},
 		set(newSkillLevel) {
+			if (newSkillLevel < 0 || newSkillLevel > 4) throw new Error("New value for Skill Level attribute out of range");
 			this.setDataValue("level", newSkillLevel);
 		}
 	}

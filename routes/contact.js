@@ -4,6 +4,7 @@ const { EmailVerifier } = require("simple-email-verifier");
 const path = require("path");
 const { createContact } = require("../controllers/contact.controller");
 const fnSendMail = require("../data/fn/fnSendMail");
+const contactFormPostRequestLimiter = require("../middleware/rateLimit/contactFormPostRequestLimiter");
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -17,7 +18,7 @@ router.get("/", (req, res) => {
 	});
 });
 
-router.post("/", (req, res) => {
+router.post("/", contactFormPostRequestLimiter, (req, res) => {
 	const { email } = req.body;
 	new EmailVerifier(10000).verify(email)
 	.then(isEmailValid => {

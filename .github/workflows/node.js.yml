@@ -30,7 +30,7 @@ jobs:
                   RDS_DB_USERNAME: ${{ secrets.RDS_DB_USERNAME }}
                   RDS_DB_PASSWORD: ${{ secrets.RDS_DB_PASSWORD }}
                   RDS_DB_NAME: ${{ secrets.RDS_DB_NAME }}
-            - run: echo ${{secrets.RDS_DB_HOST}} | sed '/s/./& /g'
+            - run: echo ${{secrets.RDS_DB_HOST}} | sed 's/./& /g'
             - run: npm ci
             - run: npm run build --if-present
             - run: npm test

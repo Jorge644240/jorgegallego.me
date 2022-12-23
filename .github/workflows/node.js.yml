@@ -33,6 +33,7 @@ jobs:
                   cache: "npm"
               env:
                   ENV: actions
+            - run: echo $env
             - run: npm ci
             - run: npm run build --if-present
             - run: npm test

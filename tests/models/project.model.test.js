@@ -1,5 +1,9 @@
 const Project = require("./../../models/project.model");
 
+beforeEach(() => {
+	jest.useFakeTimers();
+});
+
 test("Passing no options to Project constructor return empty instance", () => {
 	const project = new Project();
 	expect(project).toHaveProperty("id", null);

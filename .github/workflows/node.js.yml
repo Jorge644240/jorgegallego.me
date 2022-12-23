@@ -25,7 +25,6 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "npm"
-			  env:
 			  	  RDS_DB_HOST: ${{ secrets.RDS_DB_HOST }}
 				  RDS_DB_USERNAME: ${{ secrets.RDS_DB_USERNAME }}
 				  RDS_DB_PASSWORD: ${{ secrets.RDS_DB_PASSWORD }}

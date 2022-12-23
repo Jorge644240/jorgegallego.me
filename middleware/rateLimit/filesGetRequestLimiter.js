@@ -6,6 +6,6 @@ module.exports = rateLimit({
 	standardHeaders: true,
 	legacyHeaders: false,
 	handler: (req, res) => {
-		res.redirect("/contact");
+		res.redirect("/");
 	}
 });

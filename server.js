@@ -5,6 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const security = require("./routes/security");
 const routes = require("./routes/routes");
+const about = require("./routes/about");
 const jobs = require("./routes/jobs");
 const projects = require("./routes/projects");
 const courses = require("./routes/courses");
@@ -15,7 +16,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const port = 3000;
 
-app.use(serveFavicon(path.join(__dirname, "favicon.ico")));
+// app.use(serveFavicon(path.join(__dirname, "favicon.ico")));
 app.use(express.static(path.join(__dirname, "static")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -25,6 +26,8 @@ app.set("view engine", "pug");
 app.use(security);
 
 app.use(routes);
+
+app.use("/about", about);
 
 app.use("/experience", jobs);
 

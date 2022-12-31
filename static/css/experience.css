@@ -211,6 +211,7 @@ main > p
 {
 	header p
 	{
+		padding: 0 1rem;
 		width: 100%;
 		font-size: 1.1rem;
 	}

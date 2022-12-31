@@ -88,7 +88,9 @@ To that end, running the tests in this project involves the following steps:
 
 ## **Security**
 
-For security reasons, some file containing sensitive data has been hidden from Git. Said files are listed in the [`.gitignore`](.gitignore) file.
+For security purposes, this repository makes use of some GitHub-provided code security tools. This repository is set up with GitHub's [Dependabot](https://github.com/dependabot) to find outdated and/or vulnerable dependencies. In this case, Dependabot is not configured to fix the issues automatically, this must be done by [the developer](https://github.com/Jorge644240).
+
+This repository also makes use of GitHub Actions for automated code testing and scanning capabilities with Workflows. Code Testing is achieved with the **Node.js CI** workflow, while code scanning is provided with **CodeQL**. The configuration files for both of these workflows are available in the [.github/workflows](.github/workflows/) folder.
 
 ## **License**
 

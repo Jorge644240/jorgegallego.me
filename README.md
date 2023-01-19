@@ -18,6 +18,20 @@ The project is divided into directories (folders) that each group pieces of code
 - [Security](#security)
 - [License](#license)
 
+## **Languages and Tools**
+
+This project was built using the following languages, tools and services:
+
+1. HTML5/CSS3 - FE
+2. JavaScript - FE
+3. [Pug](https://pugjs.org) - Template Engine
+4. [NodeJS](https://nodejs.org)/[Express](https://expressjs.com) - BE
+5. [ESLint](https://eslint.org) - Code Formatting
+6. [Jest](https://jestjs.io) - Unit Testing
+7. [Sequelize](https://sequelize.org) - ORM
+8. [AWS RDS](https://aws.amazon.com/rds) - RDBMS
+9. [GitHub Actions](https://github.com/features/actions) - Automation/CI
+
 ## **Project Structure**
 
 The root folder of the project contains the [main (entry) Node.js file](server.js), the npm configuration files ([package.json](package.json) and [package-lock.json](package-lock.json)),the [.eslintrc.json](.eslintrc.json) file and the [.gitignore](.gitignore) file.
